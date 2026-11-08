@@ -1,41 +1,83 @@
-# AutoGPT Agents Skill
+# claude-agents-autogpt-skill
 
-A Claude skill for understanding, building, and operating autonomous agents with the AutoGPT platform. It covers the visual workflow builder, graph and block concepts, agent execution, integrations, development with Forge, benchmarking, and deployment.
+A Claude Code skill for building, operating, and evaluating autonomous workflows with the AutoGPT platform.
 
-## What This Skill Covers
+## Overview
 
-- Understanding AutoGPT's platform and its visual agent builder.
-- Building workflows from connected nodes and reusable blocks.
-- Running agents manually, through webhooks, or on a schedule.
-- Monitoring execution through WebSocket updates and API polling.
-- Creating custom agents and abilities with the Forge toolkit.
-- Connecting external services and managing credentials.
-- Benchmarking agent performance and deploying platform services.
+This skill helps work with visual agent workflows and persistent autonomous execution. It covers graph-based builders, reusable blocks, external integrations, execution triggers, custom agent development, benchmarking, and deployment considerations.
 
-## Repository Structure
+## Main Capabilities
 
-- `SKILL.md`: Main skill instructions and platform overview.
-- `references/advanced-usage.md`: Additional guidance for advanced workflows and platform usage.
-- `references/troubleshooting.md`: Troubleshooting notes for common setup and execution problems.
-- `LICENSE`: MIT License for this repository.
+- Understand the platform's visual workflow model.
+- Build graph-based agents from connected blocks.
+- Configure task execution and triggers.
+- Run workflows manually, by webhook, or on a schedule where supported.
+- Monitor execution and inspect failures.
+- Connect external services and tools.
+- Develop custom agents and abilities.
+- Evaluate agent performance.
+- Prepare platform deployment and operations.
 
 ## When to Use It
 
-Use this skill when evaluating AutoGPT for an autonomous workflow, setting up the platform, creating graph-based agents, developing custom abilities, or diagnosing deployment and execution issues. It also helps distinguish AutoGPT's visual workflow approach from frameworks that offer more direct control over agent logic.
+Use this skill when setting up the AutoGPT platform, creating visual agent workflows, developing custom abilities, or troubleshooting execution and deployment.
 
-## Getting Started
+## Installation
 
-1. Review the platform requirements and installation instructions in `SKILL.md`.
-2. Set up the platform using the documented Docker workflow.
-3. Configure credentials and integrations required by the agent.
-4. Build a small workflow first, then add nodes and integrations incrementally.
-5. Test execution and monitor results before deploying a persistent agent.
-6. Consult the reference guides for advanced usage and troubleshooting.
+The skill itself can be installed in the Claude Code skills directory:
 
-## Notes
+```bash
+git clone https://github.com/Brajesh31/claude-agents-autogpt-skill.git ~/.claude/skills/agents-autogpt
+```
 
-AutoGPT is an external platform. This repository contains the Claude skill and its reference documentation, not a packaged copy of the AutoGPT application. Follow the platform's current documentation for installation and operational requirements.
+The AutoGPT platform is a separate application and must be installed and configured independently. Review the platform requirements in `SKILL.md` before starting.
 
-## License
+## Usage
 
-Released under the MIT License. See [LICENSE](LICENSE) for details.
+Invoke the skill for AutoGPT platform tasks:
+
+```text
+/agents-autogpt
+```
+
+Provide the workflow goal, trigger requirements, integrations, deployment environment, and expected behavior.
+
+## Typical Workflow
+
+1. Define the agent's objective and success criteria.
+2. Select the appropriate workflow or graph structure.
+3. Configure blocks and their input/output connections.
+4. Add integrations with narrowly scoped credentials.
+5. Configure manual or external triggers.
+6. Run the workflow with representative inputs.
+7. Inspect execution traces and intermediate outputs.
+8. Add error handling and recovery behavior.
+9. Evaluate performance and safety.
+10. Deploy only after validation.
+
+## Advanced Topics
+
+The repository includes:
+
+- `references/advanced-usage.md`: Advanced workflow and platform usage.
+- `references/troubleshooting.md`: Common setup and execution issues.
+
+## Security and Reliability
+
+- Store integration credentials securely.
+- Limit permissions for connected services.
+- Validate inputs and outputs between workflow blocks.
+- Add explicit timeouts and failure handling.
+- Monitor persistent agents and scheduled jobs.
+- Require approval for destructive or high-impact actions.
+- Test webhook and schedule triggers before production use.
+
+## Repository Contents
+
+- `SKILL.md`: Main AutoGPT workflow instructions.
+- `references/`: Advanced usage and troubleshooting guides.
+- `README.md`: Platform workflow and operational guidance.
+
+## Practical Principle
+
+A visual workflow can still fail in complex ways. Keep each block's responsibility clear, test intermediate outputs, and monitor the complete workflow after deployment.
